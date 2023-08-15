@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "149979673207",
+    "project_id": "cred-ab016",
+    "storage_bucket": "cred-ab016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149979673207:android:93dde15df6c3ce036c4c72",
+        "android_client_info": {
+          "package_name": "com.example.cred"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149979673207-le8cnfn87hh0cmmjgo2nnja9mt7ks5o4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASirGSuYP-8ksBASHWxi7HkLf6nO4-LEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149979673207-le8cnfn87hh0cmmjgo2nnja9mt7ks5o4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
