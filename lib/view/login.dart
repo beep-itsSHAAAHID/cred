@@ -18,6 +18,7 @@ class login extends StatefulWidget {
 class _loginState extends State<login> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final String _title = "Login";
 
   @override
   void initState() {
@@ -55,10 +56,10 @@ class _loginState extends State<login> {
               height: 130,
               width: 430,
               decoration: const BoxDecoration(color: Color(0xff3e276b)),
-              child: const Padding(
+              child:  Padding(
                   padding: EdgeInsets.only(left: 30, top: 30),
                   child: Text(
-                    'Login',
+                    _title,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 50,
@@ -134,7 +135,7 @@ class _loginState extends State<login> {
             const SizedBox(
               height: 50,
             ),
-            customButton(buttonText: "Login",onTap: (){
+            customButton(buttonText: _title,onTap: (){
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => users()));
             }),
