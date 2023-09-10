@@ -134,46 +134,14 @@ class _loginState extends State<login> {
             const SizedBox(
               height: 50,
             ),
-            InkWell(
-              onTap: () {
-                login(context);
-              },
-              child: Container(
-                height: 70,
-                width: 330,
-                decoration: const BoxDecoration(
-                    color: Color(0xff3e276b),
-                    borderRadius: BorderRadius.all(Radius.circular(50))),
-                child: const Center(
-                    child: Text('Login',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30))),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => signup()));
-                },
-                child: Container(
-                  height: 70,
-                  width: 330,
-                  decoration: const BoxDecoration(
-                      color: Color(0xff3e276b),
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
-                  child: const Center(
-                      child: Text('SignUp',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30))),
-                ),
-              ),
-            ),
+            customButton(buttonText: "Login",onTap: (){
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => users()));
+            }),
+            customButton(buttonText: 'Sign Up',onTap: (){
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => signup()));
+            }),
             Padding(
               padding: const EdgeInsets.only(top: 38),
               child: InkWell(
@@ -220,6 +188,27 @@ class _loginState extends State<login> {
 
           ],
         )),
+      ),
+    );
+  }
+  Padding customButton({required String buttonText, required Function() onTap,}) {
+    return  Padding(
+      padding: const EdgeInsets.only(top: 40),
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          height: 70,
+          width: 330,
+          decoration: const BoxDecoration(
+              color: Color(0xff3e276b),
+              borderRadius: BorderRadius.all(Radius.circular(50))),
+          child: Center(
+              child: Text(buttonText,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30))),
+        ),
       ),
     );
   }
