@@ -1,7 +1,12 @@
+import 'package:cred/GoogleSignInProvider.dart';
 import 'package:cred/view/users.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
+
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -169,6 +174,50 @@ class _loginState extends State<login> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 38),
+              child: InkWell(
+                onTap: () {
+                  final provider = Provider.of<GoogleSignInProvider>(
+                      context, listen: false);
+                  provider.googleLogin();
+                },
+
+                child: Container(
+                  height: 70,
+                  width: 330,
+                  decoration: const BoxDecoration(
+                    color: Colors.white60,
+                    border: Border.fromBorderSide(BorderSide(color: Colors.black)),
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center, // Center the icon and text horizontally
+                      children: [
+                        // Add your icon here
+                        const Icon(
+                          FontAwesomeIcons.google, // Replace with your desired icon
+                          color: Colors.red,
+                          size: 30,
+                        ),
+                        const SizedBox(width: 10), // Add some spacing between the icon and text
+                        Text(
+                          'Google Sign in',
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+
+
           ],
         )),
       ),
